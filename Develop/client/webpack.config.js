@@ -40,6 +40,7 @@ module.exports = () => {
 
       new WebpackPwaManifest({
         // provide settings for installing the app
+        publicPath: './' ,
         name: 'Just another text editor',
         short_name: 'JATE',
         description: 'A simple text editor',
@@ -47,13 +48,13 @@ module.exports = () => {
         theme_color: '#ffffff',
         fingerprints: false,
         inject: true,
-        start_url: '/',
-        public_url: '/',
+        start_url: './',
+        public_url: './',
         icons: [
           {
-          src: path.resolve('src/images/logo.png'),
+          src: path.resolve('./src/images/logo.png'),
           sizes: [96, 128, 192, 256, 384, 512],
-          destination: path.join('assets', 'icons'),
+          destination: path.join('./assets', 'icons').replace("auto", ""),
           },
        ],
       }),
